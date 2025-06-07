@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, Calendar, MapPin, Mail, ExternalLink, Users, Target, Award, Heart } from 'lucide-react';
+import './App.css';
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -134,38 +135,16 @@ const App = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center">
-                <Heart className="w-4 h-4 text-white" />
-              </div>
-              <span className="text-xl font-bold text-blue-600">BMES</span>
-            </div>
-            
-            <div className="hidden md:flex space-x-8">
-              {[
-                { id: 'about', label: 'About Us' },
-                { id: 'involvement', label: 'Get Involved' },
-                { id: 'board', label: 'Our Current Board' },
-                { id: 'events', label: 'Upcoming Events' },
-                { id: 'gallery', label: 'Gallery' }
-              ].map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`text-sm font-medium transition-colors hover:text-blue-600 ${
-                    activeSection === item.id ? 'text-blue-600' : 'text-gray-700'
-                  }`}
-                >
-                  {item.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-      </nav>
+      <nav className="navbar">
+  <ul>
+    <li><button onClick={() => scrollToSection('home')}>Home</button></li>
+    <li><button onClick={() => scrollToSection('about')}>About Us</button></li>
+    <li><button onClick={() => scrollToSection('events')}>Upcoming Events</button></li>
+    <li><button onClick={() => scrollToSection('board')}>Our Current Board</button></li>
+    <li><button onClick={() => scrollToSection('gallery')}>Gallery</button></li>
+    <li><button onClick={() => scrollToSection('get-involved')}>Get Involved</button></li>
+  </ul>
+</nav>
 
       {/* Landing Section */}
       <section
@@ -225,7 +204,7 @@ const App = () => {
       </section>
 
       {/* About Us Section */}
-      <section id="about" className="py-20 bg-white">
+      <section id="about" className="section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">About Us</h2>
