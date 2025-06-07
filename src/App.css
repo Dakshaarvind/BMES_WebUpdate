@@ -156,6 +156,27 @@ body, #root {
   justify-content: flex-start;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0);}
+  50% { transform: translateY(-10px);}
+}
+.bounce-anim { animation: bounce 2s infinite; }
+.animate-fadeInUp { animation: fadeIn 1s both; }
+
+.events-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+}
 .event-card {
   background: linear-gradient(135deg, #e3f0fa 0%, #b3d8fd 100%);
   border-radius: 1.5rem;
@@ -163,33 +184,44 @@ body, #root {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  max-width: 320px;
   min-width: 260px;
-  max-width: 260px;
-  gap: 0.5rem;
-  padding: 1rem;
-  margin-bottom: 1rem;
   transition: transform 0.25s, box-shadow 0.25s;
   border: 2px solid #1976d2;
-  position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 .event-card:hover {
   transform: translateY(-8px) scale(1.04) rotate(-1deg);
   box-shadow: 0 8px 32px #1976d244;
   border-color: #42a5f5;
 }
-
-.event-card img {
+.event-card-img {
   width: 100%;
-  height: 120px;
+  height: 180px;
   object-fit: cover;
-  border-radius: 1rem;
-  margin-bottom: 0.5rem;
-  border: 2px solid #1976d2;
+  border-radius: 1.5rem 1.5rem 0 0;
+  border-bottom: 2px solid #1976d2;
   transition: transform 0.3s;
 }
-.event-card img:hover {
+.event-card:hover .event-card-img {
   transform: scale(1.05) rotate(1deg);
+}
+.event-card-content {
+  padding: 1.2rem 1rem 1.5rem 1rem;
+  width: 100%;
+}
+.event-card-details {
+  margin-top: 0.5rem;
+}
+.event-detail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #1976d2;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
 }
 
 .board-cards {

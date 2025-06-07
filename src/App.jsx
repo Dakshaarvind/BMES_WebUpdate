@@ -136,169 +136,109 @@ const App = () => {
     <div className="min-h-screen bg-white">
       {/* Navigation */}
       <nav className="navbar">
-  <ul>
-    <li><button className={activeSection === 'home' ? 'active' : ''} onClick={() => scrollToSection('home')}>🏠 Home</button></li>
-    <li><button className={activeSection === 'about' ? 'active' : ''} onClick={() => scrollToSection('about')}>💡 About Us</button></li>
-    <li><button className={activeSection === 'events' ? 'active' : ''} onClick={() => scrollToSection('events')}>📅 Events</button></li>
-    <li><button className={activeSection === 'board' ? 'active' : ''} onClick={() => scrollToSection('board')}>👥 Board</button></li>
-    <li><button className={activeSection === 'gallery' ? 'active' : ''} onClick={() => scrollToSection('gallery')}>📸 Gallery</button></li>
-    <li><button className={activeSection === 'involvement' ? 'active' : ''} onClick={() => scrollToSection('involvement')}>🚀 Get Involved</button></li>
-  </ul>
-</nav>
+        <ul>
+          <li><button className={activeSection === 'home' ? 'active' : ''} onClick={() => scrollToSection('home')}>🏠 Home</button></li>
+          <li><button className={activeSection === 'events' ? 'active' : ''} onClick={() => scrollToSection('events')}>📅 Events</button></li>
+          <li><button className={activeSection === 'board' ? 'active' : ''} onClick={() => scrollToSection('board')}>👥 Board</button></li>
+          <li><button className={activeSection === 'gallery' ? 'active' : ''} onClick={() => scrollToSection('gallery')}>📸 Gallery</button></li>
+          <li><button className={activeSection === 'involvement' ? 'active' : ''} onClick={() => scrollToSection('involvement')}>🚀 Get Involved</button></li>
+          <li><button className={activeSection === 'about' ? 'active' : ''} onClick={() => scrollToSection('about')}>💡 About Us</button></li>
+        </ul>
+      </nav>
 
-      {/* Landing Section */}
+      {/* Stylish Landing Section */}
       <section
-        id="home" 
-        className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-white overflow-hidden"
+        id="home"
+        className="landing-section"
+        style={{
+          animation: "fadeIn 1.2s",
+          borderRadius: "2rem",
+          marginTop: "2rem",
+          marginBottom: "2rem",
+          boxShadow: "0 8px 32px #1976d244",
+          position: "relative",
+          overflow: "hidden",
+        }}
       >
-        <div 
-          className="absolute inset-0 opacity-30"
+        <div
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e3f2fd' fill-opacity='0.3'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            position: "absolute",
+            inset: 0,
+            background: "radial-gradient(circle at 70% 30%, #42a5f5 0%, transparent 70%)",
+            opacity: 0.18,
+            zIndex: 0,
           }}
-        ></div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="mb-8">
-            <div className="inline-flex items-center space-x-4 mb-6">
-              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center shadow-lg">
-                <Heart className="w-8 h-8 text-white" />
-              </div>
-              <h1 className="text-5xl md:text-7xl font-bold text-gray-900">
-                <span className="text-blue-600">BMES</span>
-              </h1>
+        />
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <div className="inline-flex items-center space-x-4 mb-6" style={{ animation: "slideDown 1s" }}>
+            <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center shadow-lg bounce-anim">
+              <Heart className="w-8 h-8 text-white" />
             </div>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Biomedical Engineering Society
-            </p>
+            <h1 className="text-5xl md:text-7xl font-bold" style={{ color: "#fff", textShadow: "0 2px 16px #155fa088" }}>
+              <span className="text-blue-100">BMES</span>
+            </h1>
           </div>
-
+          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed" style={{ color: "#e3f0fa" }}>
+            Biomedical Engineering Society
+          </p>
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-blue-100">
+            <div className="bg-white/90 p-6 rounded-2xl shadow-lg border border-blue-100 animate-fadeInUp">
               <Target className="w-8 h-8 text-blue-600 mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Our Mission</h3>
               <p className="text-gray-600">Advancing healthcare through innovative biomedical engineering solutions and fostering the next generation of medical technology leaders.</p>
             </div>
-            
-            <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-blue-100">
+            <div className="bg-white/90 p-6 rounded-2xl shadow-lg border border-blue-100 animate-fadeInUp" style={{ animationDelay: "0.2s" }}>
               <Users className="w-8 h-8 text-blue-600 mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Community</h3>
               <p className="text-gray-600">Building a supportive network of students, professionals, and researchers passionate about improving human health.</p>
             </div>
-            
-            <div className="bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-blue-100">
+            <div className="bg-white/90 p-6 rounded-2xl shadow-lg border border-blue-100 animate-fadeInUp" style={{ animationDelay: "0.4s" }}>
               <Award className="w-8 h-8 text-blue-600 mx-auto mb-4" />
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Excellence</h3>
               <p className="text-gray-600">Promoting academic excellence, professional development, and ethical leadership in biomedical engineering.</p>
             </div>
           </div>
-
           <button
-            onClick={() => scrollToSection('about')}
+            onClick={() => scrollToSection('events')}
             className="inline-flex items-center space-x-2 bg-blue-600 text-white px-8 py-4 rounded-full font-medium hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg"
+            style={{ animation: "fadeIn 1.5s" }}
           >
-            <span>Learn More</span>
+            <span>See Upcoming Events</span>
             <ChevronDown className="w-4 h-4" />
           </button>
         </div>
       </section>
 
-      {/* About Us Section */}
-      <section id="about" className="section">
-  <div className="text-center mb-16">
-    <h2 className="text-4xl font-bold text-gray-900 mb-4">
-      💡 About Us
-    </h2>
-    <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
-  </div>
-
-  <div className="grid md:grid-cols-2 gap-12 items-center">
-    <div>
-      <h3 className="text-2xl font-semibold text-gray-900 mb-6">National Organization Mission</h3>
-      <p className="text-gray-600 mb-6 leading-relaxed">
-        🌟 The Biomedical Engineering Society (BMES) is the world's largest biomedical engineering society, dedicated to promoting the increase of biomedical engineering knowledge and its utilization for the benefit of humanity.
-      </p>
-      
-      <h4 className="text-xl font-semibold text-gray-900 mb-4">How We Achieve Our Goals</h4>
-      <ul className="space-y-3 text-gray-600 mb-6">
-        <li className="flex items-start space-x-2">
-          <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-          <span>Fostering collaboration between engineering, medicine, and life sciences</span>
-        </li>
-        <li className="flex items-start space-x-2">
-          <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-          <span>Providing professional development and networking opportunities</span>
-        </li>
-        <li className="flex items-start space-x-2">
-          <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-          <span>Supporting research and innovation in biomedical technology</span>
-        </li>
-        <li className="flex items-start space-x-2">
-          <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-          <span>Promoting ethical standards and best practices in the field</span>
-        </li>
-      </ul>
-
-      <h4 className="text-xl font-semibold text-gray-900 mb-4">What We Offer</h4>
-      <p className="text-gray-600 mb-6 leading-relaxed">
-        Our chapter provides hands-on workshops, industry connections, research opportunities, and a supportive community for students interested in biomedical engineering. We bridge the gap between academic learning and real-world applications.
-      </p>
-
-      <h4 className="text-xl font-semibold text-gray-900 mb-4">Student Success Stories</h4>
-      <p className="text-gray-600 leading-relaxed">
-        BMES members have gone on to secure prestigious internships at leading medical device companies, pursue graduate research at top universities, and launch innovative startups that are changing healthcare. Our network and resources have been instrumental in shaping successful careers in biomedical engineering.
-      </p>
-    </div>
-
-    <div className="space-y-6">
-      <img
-        src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop"
-        alt="Biomedical Engineering Lab"
-        className="w-full h-64 object-cover rounded-2xl shadow-lg"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop"
-        alt="Medical Technology"
-        className="w-full h-64 object-cover rounded-2xl shadow-lg"
-      />
-    </div>
-  </div>
-</section>
-
-      {/* Upcoming Events Section */}
-      <section id="events" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Upcoming Events</h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
-          </div>
-
-          <div className="overflow-x-auto pb-4">
-            <div className="flex space-x-6" style={{ width: 'max-content' }}>
-              {events.map((event) => (
-                <div key={event.id} className="flex-shrink-0 w-80 bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                  <img
-                    src={event.image}
-                    alt={event.name}
-                    className="w-full h-48 object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3">{event.name}</h3>
-                    <div className="space-y-2">
-                      <div className="flex items-center space-x-2 text-gray-600">
-                        <Calendar className="w-4 h-4" />
-                        <span className="text-sm">{event.date}</span>
-                      </div>
-                      <div className="flex items-center space-x-2 text-gray-600">
-                        <MapPin className="w-4 h-4" />
-                        <span className="text-sm">{event.venue}</span>
-                      </div>
-                    </div>
+      {/* Upcoming Events Section - Card Grid */}
+      <section id="events" className="section">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">📅 Upcoming Events</h2>
+          <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
+          <p className="text-gray-600 mt-4 mb-2">Join us for our latest events and workshops!</p>
+        </div>
+        <div className="events-card-grid">
+          {events.map((event) => (
+            <div key={event.id} className="event-card">
+              <img
+                src={event.image}
+                alt={event.name}
+                className="event-card-img"
+              />
+              <div className="event-card-content">
+                <h3 className="text-xl font-semibold text-blue-700 mb-2">🎓 {event.name}</h3>
+                <div className="event-card-details">
+                  <div className="event-detail">
+                    <Calendar className="w-4 h-4" />
+                    <span>{event.date}</span>
+                  </div>
+                  <div className="event-detail">
+                    <MapPin className="w-4 h-4" />
+                    <span>{event.venue}</span>
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -402,6 +342,51 @@ const App = () => {
             <span>Become a Member</span>
             <ExternalLink className="w-4 h-4" />
           </a>
+        </div>
+      </section>
+
+      {/* About Us Section */}
+      <section id="about" className="section">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            💡 About Us
+          </h2>
+          <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
+        </div>
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h3 className="text-2xl font-semibold text-gray-900 mb-6">National Organization Mission</h3>
+            <p className="text-gray-600 mb-6 leading-relaxed">
+              🌟 The Biomedical Engineering Society (BMES) is the world's largest biomedical engineering society, dedicated to promoting the increase of biomedical engineering knowledge and its utilization for the benefit of humanity.
+            </p>
+            <h4 className="text-xl font-semibold text-gray-900 mb-4">How We Achieve Our Goals</h4>
+            <ul className="space-y-3 text-gray-600 mb-6">
+              <li>🤝 Fostering collaboration between engineering, medicine, and life sciences</li>
+              <li>🌐 Providing professional development and networking opportunities</li>
+              <li>🔬 Supporting research and innovation in biomedical technology</li>
+              <li>🧭 Promoting ethical standards and best practices in the field</li>
+            </ul>
+            <h4 className="text-xl font-semibold text-gray-900 mb-4">What We Offer</h4>
+            <p className="text-gray-600 mb-6 leading-relaxed">
+              Our chapter provides hands-on workshops, industry connections, research opportunities, and a supportive community for students interested in biomedical engineering. We bridge the gap between academic learning and real-world applications.
+            </p>
+            <h4 className="text-xl font-semibold text-gray-900 mb-4">Student Success Stories</h4>
+            <p className="text-gray-600 leading-relaxed">
+              BMES members have gone on to secure prestigious internships at leading medical device companies, pursue graduate research at top universities, and launch innovative startups that are changing healthcare. Our network and resources have been instrumental in shaping successful careers in biomedical engineering.
+            </p>
+          </div>
+          <div className="space-y-6">
+            <img
+              src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop"
+              alt="Biomedical Engineering Lab"
+              className="w-full h-64 object-cover rounded-2xl shadow-lg"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop"
+              alt="Medical Technology"
+              className="w-full h-64 object-cover rounded-2xl shadow-lg"
+            />
+          </div>
         </div>
       </section>
 
