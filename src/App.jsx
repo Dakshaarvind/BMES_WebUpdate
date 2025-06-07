@@ -303,98 +303,67 @@ const App = () => {
       </section>
 
       {/* Current Board Section */}
-      <section id="board" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Current Board</h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
+      <section id="board" className="section">
+  <div className="text-center mb-12">
+    <h2 className="text-4xl font-bold text-gray-900 mb-4">👥 Our Current Board</h2>
+    <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
+    <p className="text-gray-600 mt-4 mb-2">Tap a card to learn more about each officer!</p>
+  </div>
+  <div className="board-cards">
+    {boardMembers.map((member) => (
+      <div key={member.id} className="profile-card" tabIndex={0} aria-label={`Board member: ${member.name}`}>
+        <div
+          className="profile-card-inner"
+          onClick={() => setFlippedCard(flippedCard === member.id ? null : member.id)}
+          onKeyPress={e => (e.key === 'Enter' || e.key === ' ') && setFlippedCard(flippedCard === member.id ? null : member.id)}
+          style={{
+            transform: flippedCard === member.id ? 'rotateY(180deg)' : 'rotateY(0deg)'
+          }}
+        >
+          {/* Front */}
+          <div className="profile-card-front">
+            <img src={member.image} alt={member.name} />
+            <h4 className="mb-1">{member.name}</h4>
+            <p className="text-blue-700 font-semibold mb-1">👔 {member.position}</p>
+            <p className="text-gray-700 text-sm mb-1">🎓 {member.major}</p>
+            <p className="text-gray-500 text-sm">📅 {member.year}</p>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {boardMembers.map((member) => (
-              <div key={member.id} className="relative">
-                <div
-                  className={`relative w-full h-80 rounded-2xl shadow-lg cursor-pointer transition-transform duration-700 ${
-                    flippedCard === member.id ? 'transform' : ''
-                  }`}
-                  onClick={() => setFlippedCard(flippedCard === member.id ? null : member.id)}
-                  style={{
-                    transformStyle: 'preserve-3d',
-                    transform: flippedCard === member.id ? 'rotateY(180deg)' : 'rotateY(0deg)'
-                  }}
-                >
-                  {/* Front of card */}
-                  <div
-                    className="absolute inset-0 w-full h-full bg-white rounded-2xl shadow-lg"
-                    style={{ 
-                      backfaceVisibility: 'hidden',
-                      transform: flippedCard === member.id ? 'rotateY(180deg)' : 'rotateY(0deg)'
-                    }}
-                  >
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-48 object-cover rounded-t-2xl"
-                    />
-                    <div className="p-6 text-center">
-                      <h3 className="text-xl font-semibold text-gray-900 mb-1">{member.name}</h3>
-                      <p className="text-blue-600 font-medium mb-2">{member.position}</p>
-                      <p className="text-gray-600 text-sm">{member.major}</p>
-                      <p className="text-gray-500 text-sm">{member.year}</p>
-                    </div>
-                  </div>
-
-                  {/* Back of card */}
-                  <div
-                    className="absolute inset-0 w-full h-full bg-blue-600 rounded-2xl shadow-lg text-white p-6 flex flex-col justify-center"
-                    style={{ 
-                      backfaceVisibility: 'hidden', 
-                      transform: flippedCard === member.id ? 'rotateY(0deg)' : 'rotateY(-180deg)'
-                    }}
-                  >
-                    <h3 className="text-xl font-semibold mb-4 text-center">{member.name}</h3>
-                    <div className="space-y-3 text-sm">
-                      <div>
-                        <p className="font-medium mb-1">Current Activity:</p>
-                        <p className="opacity-90">{member.activity}</p>
-                      </div>
-                      <div>
-                        <p className="font-medium mb-1">Why I joined BMES:</p>
-                        <p className="opacity-90 italic">"{member.why}"</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+          {/* Back */}
+          <div className="profile-card-back">
+            <h4 className="mb-2">{member.name}</h4>
+            <div className="mb-2">
+              <span className="font-semibold">Current:</span>
+              <br />
+              <span>{member.activity}</span>
+            </div>
+            <div>
+              <span className="font-semibold">Why BMES?</span>
+              <br />
+              <span className="italic">"{member.why}"</span>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
+    ))}
+  </div>
+</section>
 
       {/* Gallery Section */}
-      <section id="gallery" className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Gallery</h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {galleryImages.map((item) => (
-              <div key={item.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <img
-                  src={item.image}
-                  alt="Gallery"
-                  className="w-full h-64 object-cover"
-                />
-                <div className="p-6">
-                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section id="gallery" className="section">
+  <div className="text-center mb-12">
+    <h2 className="text-4xl font-bold text-gray-900 mb-4">📸 Gallery</h2>
+    <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
+    <p className="text-gray-600 mt-4 mb-2">A glimpse into our vibrant BMES community!</p>
+  </div>
+  <div className="gallery-images">
+    {galleryImages.map((item) => (
+      <div key={item.id} className="gallery-item" tabIndex={0} aria-label={item.description}>
+        <img src={item.image} alt="Gallery" />
+        <p className="text-gray-700 mt-2">{item.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
 
       {/* Get Involved Section */}
       <section id="involvement" className="py-20 bg-blue-600 text-white">
