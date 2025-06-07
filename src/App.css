@@ -1,5 +1,5 @@
 body, #root {
-  background: #f4f8fc;
+  background: linear-gradient(135deg, #e3f0fa 0%, #b3d8fd 100%);
   margin: 0;
   padding: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -49,17 +49,18 @@ body, #root {
 }
 
 .app-container {
-  background: #f4f8fc;
   min-height: 100vh;
 }
 
 .navbar {
-  background: #155fa0;
+  background: linear-gradient(90deg, #1976d2 0%, #155fa0 100%);
   padding: 0.5rem 0;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 8px #0001;
+  box-shadow: 0 2px 16px #155fa033;
+  border-radius: 0 0 2rem 2rem;
+  margin-bottom: 1rem;
 }
 
 .navbar ul {
@@ -76,58 +77,89 @@ body, #root {
   background: none;
   border: none;
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   cursor: pointer;
-  padding: 0.5rem 1.5rem;
+  padding: 0.7rem 1.7rem;
   border-radius: 2rem;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
+  position: relative;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
-.navbar button:hover, .navbar button.active {
-  background: #1976d2;
+.navbar button.active,
+.navbar button:hover {
+  background: #fff;
+  color: #1976d2;
+}
+
+.navbar button.active::after,
+.navbar button:hover::after {
+  content: '';
+  display: block;
+  margin: 0 auto;
+  width: 60%;
+  height: 3px;
+  background: linear-gradient(90deg, #1976d2 0%, #42a5f5 100%);
+  border-radius: 2px;
+  animation: underline 0.3s;
+}
+
+@keyframes underline {
+  from { width: 0; }
+  to { width: 60%; }
 }
 
 .section {
   background: #fff;
-  border-radius: 1.5rem;
-  box-shadow: 0 2px 16px #155fa01a;
+  border-radius: 2rem;
+  box-shadow: 0 4px 32px #1976d21a;
   padding: 2.5rem 1.5rem;
-  max-width: 900px;
+  max-width: 950px;
   margin: 2.5rem auto;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .landing-section {
-  background: linear-gradient(135deg, #1976d2 0%, #e3f0fa 100%);
-  color: #155fa0;
-  border-radius: 1.5rem;
-  box-shadow: 0 2px 16px #155fa01a;
+  background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
+  color: #fff;
+  border-radius: 2rem;
+  box-shadow: 0 4px 32px #1976d21a;
   padding: 3rem 1.5rem 2rem 1.5rem;
-  max-width: 900px;
+  max-width: 950px;
   margin: 2.5rem auto 2rem auto;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .landing-section img {
   width: 320px;
   max-width: 90vw;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   margin: 2rem 0 0 0;
   box-shadow: 0 2px 12px #155fa033;
+  border: 4px solid #fff;
+  transition: transform 0.3s;
+}
+.landing-section img:hover {
+  transform: scale(1.04) rotate(-2deg);
 }
 
 .events-scroll {
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   overflow-x: auto;
   padding-bottom: 1rem;
   justify-content: flex-start;
 }
 
 .event-card {
-  background: #e3f0fa;
-  border-radius: 1rem;
-  box-shadow: 0 2px 8px #155fa033;
+  background: linear-gradient(135deg, #e3f0fa 0%, #b3d8fd 100%);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 16px #1976d21a;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -136,20 +168,28 @@ body, #root {
   gap: 0.5rem;
   padding: 1rem;
   margin-bottom: 1rem;
-  transition: transform 0.2s;
+  transition: transform 0.25s, box-shadow 0.25s;
+  border: 2px solid #1976d2;
+  position: relative;
+  overflow: hidden;
+}
+.event-card:hover {
+  transform: translateY(-8px) scale(1.04) rotate(-1deg);
+  box-shadow: 0 8px 32px #1976d244;
+  border-color: #42a5f5;
 }
 
 .event-card img {
   width: 100%;
   height: 120px;
   object-fit: cover;
-  border-radius: 0.75rem;
+  border-radius: 1rem;
   margin-bottom: 0.5rem;
+  border: 2px solid #1976d2;
+  transition: transform 0.3s;
 }
-
-.event-card:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 6px 24px #155fa044;
+.event-card img:hover {
+  transform: scale(1.05) rotate(1deg);
 }
 
 .board-cards {
@@ -160,55 +200,52 @@ body, #root {
 }
 
 .profile-card {
-  width: 180px;
-  height: 260px;
-  perspective: 1000px;
+  width: 200px;
+  height: 290px;
+  perspective: 1200px;
   margin-bottom: 1rem;
+  border-radius: 1.5rem;
 }
-
 .profile-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.6s;
+  transition: transform 0.7s cubic-bezier(.4,2,.6,1);
   transform-style: preserve-3d;
 }
-
 .profile-card:hover .profile-card-inner {
   transform: rotateY(180deg);
 }
-
 .profile-card-front, .profile-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border-radius: 1rem;
-  box-shadow: 0 2px 8px #155fa033;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 8px #1976d233;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background: #fff;
   padding: 1rem;
+  transition: background 0.3s;
 }
-
 .profile-card-front {
-  background: #e3f0fa;
+  background: linear-gradient(135deg, #e3f0fa 0%, #b3d8fd 100%);
 }
-
 .profile-card-front img {
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 0.5rem;
-  border: 3px solid #1976d2;
+  border: 4px solid #1976d2;
+  background: #fff;
 }
-
 .profile-card-back {
   transform: rotateY(180deg);
-  background: #1976d2;
+  background: linear-gradient(135deg, #1976d2 0%, #42a5f5 100%);
   color: #fff;
 }
 
@@ -221,26 +258,44 @@ body, #root {
 
 .gallery-item {
   text-align: center;
-  background: #e3f0fa;
-  border-radius: 1rem;
-  box-shadow: 0 2px 8px #155fa033;
+  background: linear-gradient(135deg, #e3f0fa 0%, #b3d8fd 100%);
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 8px #1976d233;
   padding: 1rem;
-  width: 220px;
+  width: 240px;
   margin-bottom: 1rem;
+  border: 2px solid #1976d2;
+  transition: box-shadow 0.3s, border 0.3s;
+  overflow: hidden;
 }
-
+.gallery-item:hover {
+  box-shadow: 0 8px 32px #1976d244;
+  border-color: #42a5f5;
+}
 .gallery-item img {
   width: 100%;
   height: 120px;
   object-fit: cover;
-  border-radius: 0.75rem;
+  border-radius: 1rem;
   margin-bottom: 0.5rem;
+  border: 2px solid #1976d2;
+  background: #fff;
 }
 
 a {
   color: #1976d2;
   text-decoration: underline;
   font-weight: 500;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #42a5f5;
+}
+
+.emoji {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
 }
 
 @media (max-width: 1000px) {

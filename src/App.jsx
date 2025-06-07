@@ -137,12 +137,12 @@ const App = () => {
       {/* Navigation */}
       <nav className="navbar">
   <ul>
-    <li><button onClick={() => scrollToSection('home')}>Home</button></li>
-    <li><button onClick={() => scrollToSection('about')}>About Us</button></li>
-    <li><button onClick={() => scrollToSection('events')}>Upcoming Events</button></li>
-    <li><button onClick={() => scrollToSection('board')}>Our Current Board</button></li>
-    <li><button onClick={() => scrollToSection('gallery')}>Gallery</button></li>
-    <li><button onClick={() => scrollToSection('get-involved')}>Get Involved</button></li>
+    <li><button className={activeSection === 'home' ? 'active' : ''} onClick={() => scrollToSection('home')}>🏠 Home</button></li>
+    <li><button className={activeSection === 'about' ? 'active' : ''} onClick={() => scrollToSection('about')}>💡 About Us</button></li>
+    <li><button className={activeSection === 'events' ? 'active' : ''} onClick={() => scrollToSection('events')}>📅 Events</button></li>
+    <li><button className={activeSection === 'board' ? 'active' : ''} onClick={() => scrollToSection('board')}>👥 Board</button></li>
+    <li><button className={activeSection === 'gallery' ? 'active' : ''} onClick={() => scrollToSection('gallery')}>📸 Gallery</button></li>
+    <li><button className={activeSection === 'involvement' ? 'active' : ''} onClick={() => scrollToSection('involvement')}>🚀 Get Involved</button></li>
   </ul>
 </nav>
 
@@ -205,65 +205,65 @@ const App = () => {
 
       {/* About Us Section */}
       <section id="about" className="section">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">About Us</h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
-          </div>
+  <div className="text-center mb-16">
+    <h2 className="text-4xl font-bold text-gray-900 mb-4">
+      💡 About Us
+    </h2>
+    <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
+  </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-2xl font-semibold text-gray-900 mb-6">National Organization Mission</h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                The Biomedical Engineering Society (BMES) is the world's largest biomedical engineering society, dedicated to promoting the increase of biomedical engineering knowledge and its utilization for the benefit of humanity.
-              </p>
-              
-              <h4 className="text-xl font-semibold text-gray-900 mb-4">How We Achieve Our Goals</h4>
-              <ul className="space-y-3 text-gray-600 mb-6">
-                <li className="flex items-start space-x-2">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <span>Fostering collaboration between engineering, medicine, and life sciences</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <span>Providing professional development and networking opportunities</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <span>Supporting research and innovation in biomedical technology</span>
-                </li>
-                <li className="flex items-start space-x-2">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
-                  <span>Promoting ethical standards and best practices in the field</span>
-                </li>
-              </ul>
+  <div className="grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <h3 className="text-2xl font-semibold text-gray-900 mb-6">National Organization Mission</h3>
+      <p className="text-gray-600 mb-6 leading-relaxed">
+        🌟 The Biomedical Engineering Society (BMES) is the world's largest biomedical engineering society, dedicated to promoting the increase of biomedical engineering knowledge and its utilization for the benefit of humanity.
+      </p>
+      
+      <h4 className="text-xl font-semibold text-gray-900 mb-4">How We Achieve Our Goals</h4>
+      <ul className="space-y-3 text-gray-600 mb-6">
+        <li className="flex items-start space-x-2">
+          <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+          <span>Fostering collaboration between engineering, medicine, and life sciences</span>
+        </li>
+        <li className="flex items-start space-x-2">
+          <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+          <span>Providing professional development and networking opportunities</span>
+        </li>
+        <li className="flex items-start space-x-2">
+          <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+          <span>Supporting research and innovation in biomedical technology</span>
+        </li>
+        <li className="flex items-start space-x-2">
+          <div className="w-2 h-2 bg-blue-600 rounded-full mt-2 flex-shrink-0"></div>
+          <span>Promoting ethical standards and best practices in the field</span>
+        </li>
+      </ul>
 
-              <h4 className="text-xl font-semibold text-gray-900 mb-4">What We Offer</h4>
-              <p className="text-gray-600 mb-6 leading-relaxed">
-                Our chapter provides hands-on workshops, industry connections, research opportunities, and a supportive community for students interested in biomedical engineering. We bridge the gap between academic learning and real-world applications.
-              </p>
+      <h4 className="text-xl font-semibold text-gray-900 mb-4">What We Offer</h4>
+      <p className="text-gray-600 mb-6 leading-relaxed">
+        Our chapter provides hands-on workshops, industry connections, research opportunities, and a supportive community for students interested in biomedical engineering. We bridge the gap between academic learning and real-world applications.
+      </p>
 
-              <h4 className="text-xl font-semibold text-gray-900 mb-4">Student Success Stories</h4>
-              <p className="text-gray-600 leading-relaxed">
-                BMES members have gone on to secure prestigious internships at leading medical device companies, pursue graduate research at top universities, and launch innovative startups that are changing healthcare. Our network and resources have been instrumental in shaping successful careers in biomedical engineering.
-              </p>
-            </div>
+      <h4 className="text-xl font-semibold text-gray-900 mb-4">Student Success Stories</h4>
+      <p className="text-gray-600 leading-relaxed">
+        BMES members have gone on to secure prestigious internships at leading medical device companies, pursue graduate research at top universities, and launch innovative startups that are changing healthcare. Our network and resources have been instrumental in shaping successful careers in biomedical engineering.
+      </p>
+    </div>
 
-            <div className="space-y-6">
-              <img
-                src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop"
-                alt="Biomedical Engineering Lab"
-                className="w-full h-64 object-cover rounded-2xl shadow-lg"
-              />
-              <img
-                src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop"
-                alt="Medical Technology"
-                className="w-full h-64 object-cover rounded-2xl shadow-lg"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className="space-y-6">
+      <img
+        src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop"
+        alt="Biomedical Engineering Lab"
+        className="w-full h-64 object-cover rounded-2xl shadow-lg"
+      />
+      <img
+        src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop"
+        alt="Medical Technology"
+        className="w-full h-64 object-cover rounded-2xl shadow-lg"
+      />
+    </div>
+  </div>
+</section>
 
       {/* Upcoming Events Section */}
       <section id="events" className="py-20 bg-gray-50">
