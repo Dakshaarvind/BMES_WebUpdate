@@ -151,60 +151,86 @@ const App = () => {
         id="home"
         className="landing-section"
         style={{
-          animation: "fadeIn 1.2s",
-          borderRadius: "2rem",
-          marginTop: "2rem",
-          marginBottom: "2rem",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          minHeight: "60vh",
+          borderRadius: "2.5rem",
+          marginTop: "2.5rem",
+          marginBottom: "2.5rem",
           boxShadow: "0 8px 32px #1976d244",
+          background: "linear-gradient(135deg, #1976d2 0%, #42a5f5 100%)",
           position: "relative",
           overflow: "hidden",
+          animation: "fadeIn 1.2s"
         }}
       >
-        <div
-          style={{
-            position: "absolute",
-            inset: 0,
-            background: "radial-gradient(circle at 70% 30%, #42a5f5 0%, transparent 70%)",
-            opacity: 0.18,
-            zIndex: 0,
-          }}
-        />
-        <div style={{ position: "relative", zIndex: 1 }}>
-          <div className="inline-flex items-center space-x-4 mb-6" style={{ animation: "slideDown 1s" }}>
-            <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center shadow-lg bounce-anim">
-              <Heart className="w-8 h-8 text-white" />
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold" style={{ color: "#fff", textShadow: "0 2px 16px #155fa088" }}>
-              <span className="text-blue-100">BMES</span>
-            </h1>
+        <div style={{
+          position: "absolute",
+          top: "-60px",
+          right: "-60px",
+          width: "180px",
+          height: "180px",
+          background: "radial-gradient(circle, #42a5f5 0%, transparent 70%)",
+          opacity: 0.18,
+          zIndex: 0,
+          borderRadius: "50%"
+        }} />
+        <div style={{
+          position: "relative",
+          zIndex: 1,
+          width: "100%",
+          maxWidth: "500px",
+          textAlign: "center",
+          padding: "2.5rem 1rem"
+        }}>
+          <div style={{
+            fontSize: "3.5rem",
+            marginBottom: "1rem",
+            filter: "drop-shadow(0 2px 12px #155fa088)"
+          }}>
+            🧬
           </div>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed" style={{ color: "#e3f0fa" }}>
-            Biomedical Engineering Society
+          <h1 style={{
+            fontSize: "2.8rem",
+            fontWeight: 800,
+            color: "#fff",
+            letterSpacing: "1px",
+            marginBottom: "0.7rem",
+            textShadow: "0 2px 16px #155fa088"
+          }}>
+             CSULB BMES
+          </h1>
+          <p style={{
+            color: "#e3f0fa",
+            fontSize: "1.25rem",
+            marginBottom: "2.2rem",
+            fontWeight: 500,
+            lineHeight: 1.5
+          }}>
+            California State University Long Beach's Biomedical Engineering Society<br />
+            <span style={{ fontSize: "1.1rem", color: "#d0e6fa" }}>Empowering Future Innovators </span>
           </p>
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white/90 p-6 rounded-2xl shadow-lg border border-blue-100 animate-fadeInUp">
-              <Target className="w-8 h-8 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Our Mission</h3>
-              <p className="text-gray-600">Advancing healthcare through innovative biomedical engineering solutions and fostering the next generation of medical technology leaders.</p>
-            </div>
-            <div className="bg-white/90 p-6 rounded-2xl shadow-lg border border-blue-100 animate-fadeInUp" style={{ animationDelay: "0.2s" }}>
-              <Users className="w-8 h-8 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Community</h3>
-              <p className="text-gray-600">Building a supportive network of students, professionals, and researchers passionate about improving human health.</p>
-            </div>
-            <div className="bg-white/90 p-6 rounded-2xl shadow-lg border border-blue-100 animate-fadeInUp" style={{ animationDelay: "0.4s" }}>
-              <Award className="w-8 h-8 text-blue-600 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Excellence</h3>
-              <p className="text-gray-600">Promoting academic excellence, professional development, and ethical leadership in biomedical engineering.</p>
-            </div>
-          </div>
           <button
             onClick={() => scrollToSection('events')}
-            className="inline-flex items-center space-x-2 bg-blue-600 text-white px-8 py-4 rounded-full font-medium hover:bg-blue-700 transition-all transform hover:scale-105 shadow-lg"
-            style={{ animation: "fadeIn 1.5s" }}
+            style={{
+              background: "#fff",
+              color: "#1976d2",
+              border: "none",
+              borderRadius: "2rem",
+              padding: "1rem 2.5rem",
+              fontWeight: 600,
+              fontSize: "1.1rem",
+              boxShadow: "0 2px 12px #155fa033",
+              cursor: "pointer",
+              transition: "background 0.2s, color 0.2s, transform 0.2s",
+              outline: "none"
+            }}
+            onMouseOver={e => { e.currentTarget.style.background = "#e3f0fa"; e.currentTarget.style.color = "#155fa0"; e.currentTarget.style.transform = "scale(1.05)"; }}
+            onMouseOut={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.color = "#1976d2"; e.currentTarget.style.transform = "scale(1)"; }}
           >
-            <span>See Upcoming Events</span>
-            <ChevronDown className="w-4 h-4" />
+            <span role="img" aria-label="calendar">📅</span> See Upcoming Events
           </button>
         </div>
       </section>
