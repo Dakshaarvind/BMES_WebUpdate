@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, Calendar, MapPin, Mail, ExternalLink, Users, Target, Award, Heart } from 'lucide-react';
 import './App.css';
+import EventsCarousel from "./EventsCarousel";
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -235,38 +236,15 @@ const App = () => {
         </div>
       </section>
 
-      {/* Upcoming Events Section - Card Grid */}
+      {/* Upcoming Events Section - Carousel */}
       <section id="events" className="section">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">📅 Upcoming Events</h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
-          <p className="text-gray-600 mt-4 mb-2">Join us for our latest events and workshops!</p>
-        </div>
-        <div className="events-card-grid">
-          {events.map((event) => (
-            <div key={event.id} className="event-card">
-              <img
-                src={event.image}
-                alt={event.name}
-                className="event-card-img"
-              />
-              <div className="event-card-content">
-                <h3 className="text-xl font-semibold text-blue-700 mb-2">🎓 {event.name}</h3>
-                <div className="event-card-details">
-                  <div className="event-detail">
-                    <Calendar className="w-4 h-4" />
-                    <span>{event.date}</span>
-                  </div>
-                  <div className="event-detail">
-                    <MapPin className="w-4 h-4" />
-                    <span>{event.venue}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+  <div className="text-center mb-12">
+    <h2 className="text-4xl font-bold text-gray-900 mb-4">📅 Upcoming Events</h2>
+    <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
+    <p className="text-gray-600 mt-4 mb-2">Join us for our latest events and workshops!</p>
+  </div>
+  <EventsCarousel events={events} />
+</section>
 
       {/* Current Board Section */}
       <section id="board" className="section">

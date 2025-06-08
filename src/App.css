@@ -330,6 +330,56 @@ a:hover {
   vertical-align: middle;
 }
 
+.events-carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.events-carousel {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1rem 0.5rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  width: 100%;
+  max-width: 1000px;
+}
+.events-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-arrow {
+  background: #1976d2;
+  border: none;
+  color: #fff;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px #1976d233;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  z-index: 2;
+  position: relative;
+}
+.carousel-arrow.left {
+  margin-right: 0.5rem;
+}
+.carousel-arrow.right {
+  margin-left: 0.5rem;
+}
+.carousel-arrow:hover {
+  background: #42a5f5;
+  transform: scale(1.08);
+}
+
 @media (max-width: 1000px) {
   .events-scroll, .gallery-images, .board-cards {
     flex-wrap: wrap;
@@ -342,5 +392,15 @@ a:hover {
   .section, .landing-section {
     max-width: 98vw;
     padding: 1.2rem 0.5rem;
+  }
+}
+@media (max-width: 700px) {
+  .events-carousel {
+    max-width: 98vw;
+    gap: 1rem;
+  }
+  .carousel-arrow {
+    width: 36px;
+    height: 36px;
   }
 }
