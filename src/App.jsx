@@ -310,89 +310,235 @@ const App = () => {
 </section>
 
       {/* Get Involved Section */}
-      <section id="involvement" className="py-20 bg-blue-600 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-4">Get Involved</h2>
-          <div className="w-24 h-1 bg-white mx-auto mb-8"></div>
-          
-          <p className="text-xl mb-12 max-w-3xl mx-auto leading-relaxed opacity-90">
-            Ready to join a community of passionate biomedical engineers? Become a member and start your journey toward making a difference in healthcare technology.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <div className="text-center">
-              <Users className="w-12 h-12 mx-auto mb-4 opacity-80" />
-              <h3 className="text-xl font-semibold mb-2">Join Our Community</h3>
-              <p className="opacity-80">Connect with like-minded students and professionals</p>
-            </div>
-            <div className="text-center">
-              <Target className="w-12 h-12 mx-auto mb-4 opacity-80" />
-              <h3 className="text-xl font-semibold mb-2">Advance Your Career</h3>
-              <p className="opacity-80">Access internships, mentorship, and job opportunities</p>
-            </div>
-            <div className="text-center">
-              <Heart className="w-12 h-12 mx-auto mb-4 opacity-80" />
-              <h3 className="text-xl font-semibold mb-2">Make an Impact</h3>
-              <p className="opacity-80">Contribute to projects that improve human health</p>
-            </div>
-          </div>
-
-          <a
-            href="https://www.bmes.org/membership"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center space-x-2 bg-white text-blue-600 px-8 py-4 rounded-full font-medium hover:bg-gray-100 transition-all transform hover:scale-105 shadow-lg"
-          >
-            <span>Become a Member</span>
-            <ExternalLink className="w-4 h-4" />
-          </a>
-        </div>
-      </section>
+      <section id="involvement" className="section" style={{
+  background: "linear-gradient(135deg, #1976d2 60%, #42a5f5 100%)",
+  color: "#fff",
+  borderRadius: "2rem",
+  boxShadow: "0 4px 32px #1976d21a",
+  marginBottom: "2.5rem",
+  position: "relative",
+  overflow: "hidden"
+}}>
+  <div style={{
+    position: "absolute",
+    top: "-60px",
+    right: "-60px",
+    width: "180px",
+    height: "180px",
+    background: "radial-gradient(circle, #fff 0%, transparent 70%)",
+    opacity: 0.10,
+    zIndex: 0,
+    borderRadius: "50%"
+  }} />
+  <div style={{ position: "relative", zIndex: 1 }}>
+    <h2 className="text-4xl font-bold mb-4" style={{ color: "#fff" }}>🚀 Get Involved</h2>
+    <div className="w-24 h-1 mx-auto mb-8" style={{ background: "#fff", borderRadius: "2px" }}></div>
+    <p className="text-xl mb-10 max-w-2xl mx-auto leading-relaxed" style={{ color: "#e3f0fa", fontWeight: 500 }}>
+      Ready to join a community of passionate biomedical engineers? <br />
+      <span style={{ color: "#fff", fontWeight: 700 }}>Become a member and start your journey toward making a difference in healthcare technology.</span>
+    </p>
+    <div style={{
+      display: "flex",
+      flexWrap: "wrap",
+      justifyContent: "center",
+      gap: "2rem",
+      marginBottom: "2.5rem"
+    }}>
+      <div style={{
+        background: "rgba(255,255,255,0.13)",
+        borderRadius: "1.5rem",
+        padding: "2rem 1.5rem",
+        minWidth: "220px",
+        maxWidth: "260px",
+        boxShadow: "0 2px 12px #155fa033",
+        textAlign: "center",
+        backdropFilter: "blur(2px)"
+      }}>
+        <Users className="w-10 h-10 mx-auto mb-3" color="#fff" />
+        <h3 style={{ fontWeight: 600, marginBottom: "0.5rem" }}>Join Our Community</h3>
+        <p style={{ color: "#e3f0fa" }}>Connect with like-minded students and professionals</p>
+      </div>
+      <div style={{
+        background: "rgba(255,255,255,0.13)",
+        borderRadius: "1.5rem",
+        padding: "2rem 1.5rem",
+        minWidth: "220px",
+        maxWidth: "260px",
+        boxShadow: "0 2px 12px #155fa033",
+        textAlign: "center",
+        backdropFilter: "blur(2px)"
+      }}>
+        <Target className="w-10 h-10 mx-auto mb-3" color="#fff" />
+        <h3 style={{ fontWeight: 600, marginBottom: "0.5rem" }}>Advance Your Career</h3>
+        <p style={{ color: "#e3f0fa" }}>Access internships, mentorship, and job opportunities</p>
+      </div>
+      <div style={{
+        background: "rgba(255,255,255,0.13)",
+        borderRadius: "1.5rem",
+        padding: "2rem 1.5rem",
+        minWidth: "220px",
+        maxWidth: "260px",
+        boxShadow: "0 2px 12px #155fa033",
+        textAlign: "center",
+        backdropFilter: "blur(2px)"
+      }}>
+        <Heart className="w-10 h-10 mx-auto mb-3" color="#fff" />
+        <h3 style={{ fontWeight: 600, marginBottom: "0.5rem" }}>Make an Impact</h3>
+        <p style={{ color: "#e3f0fa" }}>Contribute to projects that improve human health</p>
+      </div>
+    </div>
+    <a
+      href="https://www.bmes.org/membership"
+      target="_blank"
+      rel="noopener noreferrer"
+      style={{
+        display: "inline-flex",
+        alignItems: "center",
+        gap: "0.7rem",
+        background: "#fff",
+        color: "#1976d2",
+        padding: "1rem 2.5rem",
+        borderRadius: "2rem",
+        fontWeight: 700,
+        fontSize: "1.15rem",
+        boxShadow: "0 2px 12px #155fa033",
+        textDecoration: "none",
+        transition: "background 0.2s, color 0.2s, transform 0.2s"
+      }}
+      onMouseOver={e => { e.currentTarget.style.background = "#e3f0fa"; e.currentTarget.style.color = "#155fa0"; e.currentTarget.style.transform = "scale(1.05)"; }}
+      onMouseOut={e => { e.currentTarget.style.background = "#fff"; e.currentTarget.style.color = "#1976d2"; e.currentTarget.style.transform = "scale(1)"; }}
+    >
+      <span>Become a Member</span>
+      <ExternalLink className="w-5 h-5" />
+    </a>
+  </div>
+</section>
 
       {/* About Us Section */}
-      <section id="about" className="section">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            💡 About Us
-          </h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto"></div>
-        </div>
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h3 className="text-2xl font-semibold text-gray-900 mb-6">National Organization Mission</h3>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              🌟 The Biomedical Engineering Society (BMES) is the world's largest biomedical engineering society, dedicated to promoting the increase of biomedical engineering knowledge and its utilization for the benefit of humanity.
-            </p>
-            <h4 className="text-xl font-semibold text-gray-900 mb-4">How We Achieve Our Goals</h4>
-            <ul className="space-y-3 text-gray-600 mb-6">
-              <li>🤝 Fostering collaboration between engineering, medicine, and life sciences</li>
-              <li>🌐 Providing professional development and networking opportunities</li>
-              <li>🔬 Supporting research and innovation in biomedical technology</li>
-              <li>🧭 Promoting ethical standards and best practices in the field</li>
-            </ul>
-            <h4 className="text-xl font-semibold text-gray-900 mb-4">What We Offer</h4>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              Our chapter provides hands-on workshops, industry connections, research opportunities, and a supportive community for students interested in biomedical engineering. We bridge the gap between academic learning and real-world applications.
-            </p>
-            <h4 className="text-xl font-semibold text-gray-900 mb-4">Student Success Stories</h4>
-            <p className="text-gray-600 leading-relaxed">
-              BMES members have gone on to secure prestigious internships at leading medical device companies, pursue graduate research at top universities, and launch innovative startups that are changing healthcare. Our network and resources have been instrumental in shaping successful careers in biomedical engineering.
-            </p>
-          </div>
-          <div className="space-y-6">
-            <img
-              src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop"
-              alt="Biomedical Engineering Lab"
-              className="w-full h-64 object-cover rounded-2xl shadow-lg"
-            />
-            <img
-              src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop"
-              alt="Medical Technology"
-              className="w-full h-64 object-cover rounded-2xl shadow-lg"
-            />
-          </div>
-        </div>
-      </section>
+      <section
+  id="about"
+  className="section"
+  style={{
+    background: "linear-gradient(135deg, #e3f0fa 0%, #b3d8fd 100%)",
+    borderRadius: "2rem",
+    boxShadow: "0 4px 32px #1976d21a",
+    marginBottom: "2.5rem",
+    position: "relative",
+    overflow: "hidden",
+    padding: "0"
+  }}
+>
+  <div style={{
+    position: "absolute",
+    left: "-80px",
+    top: "-80px",
+    width: "200px",
+    height: "200px",
+    background: "radial-gradient(circle, #1976d2 0%, transparent 70%)",
+    opacity: 0.12,
+    zIndex: 0,
+    borderRadius: "50%"
+  }} />
+  <div style={{
+    position: "relative",
+    zIndex: 1,
+    maxWidth: "1100px",
+    margin: "0 auto",
+    padding: "3rem 1.5rem"
+  }}>
+    <div className="text-center mb-12">
+      <h2 className="text-4xl font-bold mb-4" style={{ color: "#155fa0", letterSpacing: "1px" }}>
+        💡 About Us
+      </h2>
+      <div className="w-24 h-1 mx-auto mb-6" style={{ background: "#1976d2", borderRadius: "2px" }}></div>
+      <p className="text-xl" style={{ color: "#1976d2", fontWeight: 500 }}>
+        <span role="img" aria-label="sparkles">✨</span> Empowering Future Innovators in Biomedical Engineering <span role="img" aria-label="dna">🧬</span>
+      </p>
+    </div>
+    <div style={{
+      display: "flex",
+      flexWrap: "wrap",
+      gap: "2.5rem",
+      alignItems: "center",
+      justifyContent: "center"
+    }}>
+      {/* Left: Info Card */}
+      <div style={{
+        flex: "1 1 340px",
+        minWidth: "320px",
+        maxWidth: "500px",
+        background: "rgba(255,255,255,0.85)",
+        borderRadius: "1.5rem",
+        boxShadow: "0 2px 16px #1976d233",
+        padding: "2.5rem 2rem",
+        textAlign: "left",
+        backdropFilter: "blur(2px)"
+      }}>
+        <h3 style={{ color: "#1976d2", fontWeight: 700, fontSize: "1.5rem", marginBottom: "1.2rem" }}>
+          🌎 National Organization Mission
+        </h3>
+        <p style={{ color: "#155fa0", marginBottom: "1.2rem", fontWeight: 500 }}>
+          The Biomedical Engineering Society (BMES) is the world's largest biomedical engineering society, dedicated to promoting the increase of biomedical engineering knowledge and its utilization for the benefit of humanity.
+        </p>
+        <h4 style={{ color: "#1976d2", fontWeight: 600, fontSize: "1.15rem", marginBottom: "0.7rem" }}>
+          🚀 How We Achieve Our Goals
+        </h4>
+        <ul style={{ color: "#1976d2", marginBottom: "1.2rem", fontWeight: 500, lineHeight: 1.7, paddingLeft: "1.2rem" }}>
+          <li>🤝 Fostering collaboration between engineering, medicine, and life sciences</li>
+          <li>🌐 Providing professional development and networking opportunities</li>
+          <li>🔬 Supporting research and innovation in biomedical technology</li>
+          <li>🧭 Promoting ethical standards and best practices in the field</li>
+        </ul>
+        <h4 style={{ color: "#1976d2", fontWeight: 600, fontSize: "1.15rem", marginBottom: "0.7rem" }}>
+          🎯 What We Offer
+        </h4>
+        <p style={{ color: "#155fa0", marginBottom: "1.2rem", fontWeight: 500 }}>
+          Our chapter provides hands-on workshops, industry connections, research opportunities, and a supportive community for students interested in biomedical engineering. We bridge the gap between academic learning and real-world applications.
+        </p>
+        <h4 style={{ color: "#1976d2", fontWeight: 600, fontSize: "1.15rem", marginBottom: "0.7rem" }}>
+          🏆 Student Success Stories
+        </h4>
+        <p style={{ color: "#155fa0", fontWeight: 500 }}>
+          BMES members have gone on to secure prestigious internships at leading medical device companies, pursue graduate research at top universities, and launch innovative startups that are changing healthcare.
+        </p>
+      </div>
+      {/* Right: Images */}
+      <div style={{
+        flex: "1 1 320px",
+        minWidth: "280px",
+        display: "flex",
+        flexDirection: "column",
+        gap: "1.5rem",
+        alignItems: "center"
+      }}>
+        <img
+          src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop"
+          alt="Biomedical Engineering Lab"
+          style={{
+            width: "100%",
+            maxWidth: "350px",
+            height: "200px",
+            objectFit: "cover",
+            borderRadius: "1.2rem",
+            boxShadow: "0 2px 12px #1976d233"
+          }}
+        />
+        <img
+          src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop"
+          alt="Medical Technology"
+          style={{
+            width: "100%",
+            maxWidth: "350px",
+            height: "200px",
+            objectFit: "cover",
+            borderRadius: "1.2rem",
+            boxShadow: "0 2px 12px #1976d233"
+          }}
+        />
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
