@@ -481,7 +481,7 @@ const App = () => {
           The Biomedical Engineering Society (BMES) is the world's largest biomedical engineering society, dedicated to promoting the increase of biomedical engineering knowledge and its utilization for the benefit of humanity.
         </p>
         <h4 style={{ color: "#1976d2", fontWeight: 600, fontSize: "1.15rem", marginBottom: "0.7rem" }}>
-          🚀 How We Achieve Our Goals
+           How We Achieve Our Goals
         </h4>
         <ul style={{ color: "#1976d2", marginBottom: "1.2rem", fontWeight: 500, lineHeight: 1.7, paddingLeft: "1.2rem" }}>
           <li>🤝 Fostering collaboration between engineering, medicine, and life sciences</li>
@@ -512,8 +512,8 @@ const App = () => {
         alignItems: "center"
       }}>
         <img
-          src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop"
-          alt="Biomedical Engineering Lab"
+          src="./BMES_CON.jpg"
+          alt="BMES Convention"
           style={{
             width: "100%",
             maxWidth: "350px",
