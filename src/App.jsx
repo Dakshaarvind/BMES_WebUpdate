@@ -186,6 +186,20 @@ const App = () => {
           textAlign: "center",
           padding: "2.5rem 1rem"
         }}>
+          {/* Logo at the top */}
+          <img
+            src="/BMES_Logo.jpg" 
+            alt="BMES Logo"
+            style={{
+              width: "90px",
+              height: "90px",
+              objectFit: "contain",
+              borderRadius: "1.2rem",
+              marginBottom: "1.2rem",
+              boxShadow: "0 2px 12px #155fa033",
+              background: "#fff"
+            }}
+          />
           <div style={{
             fontSize: "3.5rem",
             marginBottom: "1rem",
@@ -211,7 +225,7 @@ const App = () => {
             lineHeight: 1.5
           }}>
             California State University Long Beach's Biomedical Engineering Society<br />
-            <span style={{ fontSize: "1.1rem", color: "#d0e6fa" }}>Empowering Future Innovators </span>
+            <span style={{ fontSize: "1.1rem", color: "#d0e6fa" }}>Empowering Future Innovators 🚀</span>
           </p>
           <button
             onClick={() => scrollToSection('events')}
