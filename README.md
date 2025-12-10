@@ -1,12 +1,35 @@
-# React + Vite
+# 🧬 BMES Website  
+**Official website for the Biomedical Engineering Society (BMES) — redesigned and updated using React.**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The BMES Website provides an updated digital presence for the organization, offering students, members, and visitors an easy way to explore events, learn about the club, view officer boards, and access important resources. The site is modern, responsive, and built with a maintainable React architecture.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ⭐ Overview  
+This project is a full redesign of the BMES (Biomedical Engineering Society) website, modernizing the UI/UX and streamlining updates through component-based development.
 
-## Expanding the ESLint configuration
+The website includes:
+- Information about BMES and its mission  
+- Officer board pages  
+- Events calendar and announcements  
+- Membership information  
+- Resources for students  
+- Contact and social links  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The site is built to be **clean, fast, accessible, and easy to update**.
+
+---
+
+## 🚀 Features  
+- 🌐 **Responsive multi-page React website**  
+- 🎨 **Modern UI** with reusable components  
+- 📅 **Events & announcements** sections  
+- 🧑‍🔬 **Officer board** with updated profiles  
+- 📁 **Resources & membership info**  
+- ⚡ **Fast builds** using Vite or CRA (whichever you used)  
+- 🔄 **Easily maintainable** page structure  
+- 💬 **Contact + social media integration**
+
+
+# Start development server
+npm run dev   # or npm start, depending on build setup
