@@ -29,7 +29,3 @@ The site is built to be **clean, fast, accessible, and easy to update**.
 - ⚡ **Fast builds** using Vite or CRA (whichever you used)  
 - 🔄 **Easily maintainable** page structure  
 - 💬 **Contact + social media integration**
-
-
-# Start development server
-npm run dev   # or npm start, depending on build setup
